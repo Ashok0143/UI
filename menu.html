@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Menu</title>
+    <link rel="stylesheet" href="menu.css" />
+  </head>
+  <body>
+    <div class="nav-bar">
+      <div id="menu-bar">
+        <div class="bar" id="bar1"></div>
+        <div class="bar" id="bar2"></div>
+        <div class="bar" id="bar3"></div>
+      </div>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li>
+          <div class="subnav" onclick="toggleNav(this)">
+            <p><span>Upload-></span></p>
+            <ul class="sub-nav-links">
+              <li><a href="#">Admin</a></li>
+              <li><a href="#">User</a></li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="subnav" onclick="toggleNav(this)">
+            <p><span>Check-></span></p>
+            <ul class="sub-nav-links">
+              <li><a href="#">Admin</a></li>
+              <li><a href="#">User</a></li>
+            </ul>
+          </div>
+        </li>
+        <li><a href="#">View</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="menu-bg"></div>
+
+    <script>
+      let menu = document.querySelector("#menu-bar");
+      let navLinks = document.querySelector(".nav-links");
+      let menuBg = document.querySelector(".menu-bg");
+
+      menu.onclick = function () {
+        navLinks.classList.toggle("show-links");
+        menu.classList.toggle("menu-change");
+        menuBg.classList.toggle("menu-bg-show");
+      };
+    </script>
+    <script>
+      function toggleNav(subnav) {
+        subnav.classList.toggle("active");
+      }
+    </script>
+    <script>
+      // Replace 'your-logo-image.jpg' with the actual path to your logo image
+      const logoPath = "ashok_new.png";
+
+      // Create a new div element
+      const logoContainer = document.createElement("div");
+      logoContainer.classList.add("logo");
+
+      // Set the background image dynamically
+      logoContainer.style.backgroundImage = `url("${logoPath}")`;
+
+      // Append the div to the body
+      document.body.appendChild(logoContainer);
+      console.log('Logo added succesfuly:', logoContainer);
+    </script>
+  </body>
+</html>
